@@ -24,5 +24,15 @@ public class Book {
     private String author;
 
     @Column(name = "book_price")
-    private int price;
+    private Long price;
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", author='" + author + '\'' +
+                ", price=" + price +
+                '}';
+    }
 }

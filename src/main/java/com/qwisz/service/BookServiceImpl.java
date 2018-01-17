@@ -20,7 +20,8 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public void updateBook(Book book) {
+    public void updateBook(Book book, Long id) {
+//        bookDao.updateById(book.getTitle(), book.getAuthor(), book.getPrice(), id);
         bookDao.save(book);
     }
 
@@ -37,7 +38,7 @@ public class BookServiceImpl implements BookService {
     @Override
     public List<Book> listBooks() {
         List<Book> books = new ArrayList<>();
-        bookDao.findAll().forEach(books::add);
+        books.addAll(bookDao.findAll());
         return books;
     }
 }
